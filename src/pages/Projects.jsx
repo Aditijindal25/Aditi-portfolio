@@ -111,8 +111,8 @@ function Projects() {
   <div
     className="project-cursor"
     style={{
-      left: `${cursorPosition.x + 15}px`,
-      top: `${cursorPosition.y + 15}px`,
+      left: `${cursorPosition.x}px`,
+      top: `${cursorPosition.y}px`,
     }}
   >
     VIEW PROJECT →
