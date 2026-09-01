@@ -1,19 +1,11 @@
 import { useState } from "react";
 
 function Projects() {
-  const [cursorVisible, setCursorVisible] = useState(false);
-
+  const [activeProject, setActiveProject] = useState(null);
   const [cursorPosition, setCursorPosition] = useState({
     x: 0,
     y: 0,
   });
-
-  const handleMouseMove = (e) => {
-    setCursorPosition({
-      x: e.clientX,
-      y: e.clientY,
-    });
-  };
 
   const projects = [
     {
@@ -46,15 +38,25 @@ function Projects() {
     },
   ];
 
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    setCursorPosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
   return (
     <main className="page">
 
+      {/* Page Number */}
       <div className="page-number">
         03 / PROJECTS
       </div>
 
+      {/* Header */}
       <div className="projects-header">
-
         <p className="eyebrow">
           SELECTED WORK
         </p>
@@ -64,60 +66,64 @@ function Projects() {
           <br />
           <span>built.</span>
         </h1>
-
       </div>
 
+      {/* Projects List */}
       <div className="projects-list">
 
         {projects.map((project) => (
-
           <div
             className="project-item"
             key={project.number}
-            onMouseEnter={() => setCursorVisible(true)}
-            onMouseLeave={() => setCursorVisible(false)}
+            onMouseEnter={() => setActiveProject(project.number)}
+            onMouseLeave={() => setActiveProject(null)}
             onMouseMove={handleMouseMove}
           >
 
+            {/* Number */}
             <span className="project-number">
               {project.number}
             </span>
 
+            {/* Title */}
             <h2>
               {project.title}
             </h2>
 
+            {/* Description */}
             <p>
               {project.description}
             </p>
 
+            {/* GitHub */}
             <a
               className="project-link"
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
             >
               VIEW →
             </a>
 
-          </div>
+            {/* Custom Cursor */}
+            {activeProject === project.number && (
+              <div
+                className="project-cursor"
+                style={{
+                  left: `${cursorPosition.x}px`,
+                  top: `${cursorPosition.y}px`,
+                }}
+              >
+                VIEW
+                <br />
+                PROJECT →
+              </div>
+            )}
 
+          </div>
         ))}
 
       </div>
-
-      {cursorVisible && (
-  <div
-    className="project-cursor"
-    style={{
-      left: `${cursorPosition.x}px`,
-      top: `${cursorPosition.y}px`,
-    }}
-  >
-    VIEW PROJECT →
-  </div>
-)}
 
     </main>
   );
