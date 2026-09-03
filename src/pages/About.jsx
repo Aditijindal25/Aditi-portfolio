@@ -1,3 +1,4 @@
+
 function About() {
   return (
     <main className="page">
@@ -8,20 +9,28 @@ function About() {
 
       <div className="about-layout">
 
-        <div>
+        {/* LEFT SIDE */}
+        <div className="about-intro">
 
           <p className="eyebrow">
             WHO I AM
           </p>
 
           <h1 className="page-title">
-            More than
+            Building with
             <br />
-            <span>just code.</span>
+            <span>purpose.</span>
           </h1>
+
+          <p className="about-tagline">
+            Developer. Problem solver.
+            <br />
+            Constantly learning.
+          </p>
 
         </div>
 
+        {/* RIGHT SIDE */}
         <div className="about-content">
 
           <p className="big-text">
@@ -32,25 +41,43 @@ function About() {
           </p>
 
           <p>
-            My development journey has focused on
-            programming, web development and
-            problem-solving. I enjoy turning ideas into
-            functional, responsive applications.
+            My journey in development has taken me
+            through web development, programming and
+            problem-solving. I enjoy transforming ideas
+            into responsive, functional and meaningful
+            digital experiences.
           </p>
 
           <p>
-            Alongside development, I've participated
-            in hackathons and team-based projects,
-            contributed to open-source initiatives,
-            and explored areas including algorithms,
-            intelligent systems and scalable computing.
+            I also enjoy working on hackathons, team-based
+            projects and open-source initiatives while
+            exploring areas such as algorithms, AI/ML and
+            intelligent systems.
           </p>
 
+          {/* CURRENTLY */}
+          <div className="about-current">
+
+            <span className="about-label">
+              CURRENTLY
+            </span>
+
+            <p>
+              Exploring full-stack development, AI/ML
+              and building projects that solve practical
+              problems.
+            </p>
+
+          </div>
+
+          {/* INFO CARDS */}
           <div className="about-cards">
 
-            <div>
+            <div className="about-card">
               <span>01</span>
+
               <h3>EDUCATION</h3>
+
               <p>
                 B.Tech — CS & IT
                 <br />
@@ -58,21 +85,27 @@ function About() {
               </p>
             </div>
 
-            <div>
+            <div className="about-card">
               <span>02</span>
-              <h3>CGPA</h3>
-              <p>
-                8.03
-              </p>
-            </div>
 
-            <div>
-              <span>03</span>
               <h3>FOCUS</h3>
+
               <p>
                 Software Development
                 <br />
-                Algorithms & Intelligent Systems
+                AI/ML & Intelligent Systems
+              </p>
+            </div>
+
+            <div className="about-card">
+              <span>03</span>
+
+              <h3>INTERESTS</h3>
+
+              <p>
+                Web Development
+                <br />
+                Open Source & Problem Solving
               </p>
             </div>
 
@@ -87,3 +120,4 @@ function About() {
 }
 
 export default About;
+

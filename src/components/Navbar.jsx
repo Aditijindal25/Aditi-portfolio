@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <NavLink to="/" className="logo">
-        ADITI<span>.</span>
+        ADITI
       </NavLink>
 
       <nav className="nav-links">
