@@ -3,7 +3,7 @@ function Contact() {
     <main className="page">
 
       <div className="page-number">
-        06 / CONTACT
+        07 / CONTACT
       </div>
 
       <div className="contact-content">
@@ -21,16 +21,14 @@ function Contact() {
         </h1>
 
         <p className="contact-description">
-          Have an idea? Have an opportunity?
-          Or just want to say hello?
-          I'd love to hear from you.
+          I am open to software engineering internships, thoughtful collaborations and projects where I can contribute, learn quickly and ship useful work.
         </p>
 
         <a
-          href="mailto:YOUR_EMAIL@gmail.com"
+          href="mailto:aditijindal441@gmail.com"
           className="contact-email"
         >
-          aditijindal441@gmail.com→
+          aditijindal441@gmail.com →
         </a>
 
         <div className="contact-links">

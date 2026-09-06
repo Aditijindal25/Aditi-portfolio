@@ -34,25 +34,15 @@ function About() {
         <div className="about-content">
 
           <p className="big-text">
-            I'm Aditi Jindal, a Computer Science and
-            Information Technology undergraduate
-            interested in building useful technology
-            and solving real-world problems.
+            I'm Aditi Jindal, a Computer Science and Information Technology undergraduate focused on building useful software and developing the fundamentals to engineer it well.
           </p>
 
           <p>
-            My journey in development has taken me
-            through web development, programming and
-            problem-solving. I enjoy transforming ideas
-            into responsive, functional and meaningful
-            digital experiences.
+            I build responsive web applications with React, JavaScript and Python, with an emphasis on clear interfaces, maintainable code and practical user outcomes.
           </p>
 
           <p>
-            I also enjoy working on hackathons, team-based
-            projects and open-source initiatives while
-            exploring areas such as algorithms, AI/ML and
-            intelligent systems.
+            Alongside product work, I am strengthening data structures and algorithms, exploring AI/ML and cloud systems, and using internships, hackathons and open source to learn how strong engineering teams ship.
           </p>
 
           {/* CURRENTLY */}
@@ -63,9 +53,7 @@ function About() {
             </span>
 
             <p>
-              Exploring full-stack development, AI/ML
-              and building projects that solve practical
-              problems.
+              Building full-stack projects, improving algorithmic problem solving, and looking for opportunities to contribute to high-ownership engineering work.
             </p>
 
           </div>

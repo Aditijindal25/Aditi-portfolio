@@ -5,12 +5,15 @@ function Home() {
   const [terminalOpen, setTerminalOpen] = useState(false);
   return (
     <main className="home">
+      <aside className="social-rail" aria-label="Social links">
+        <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+        <a href="mailto:aditijindal441@gmail.com" aria-label="Email">@</a>
+        <span className="social-line"></span>
+      </aside>
 
       <div className="home-content">
-
-        <p className="eyebrow intro-animate delay-1">
-          HELLO, I'M
-        </p>
+        <p className="eyebrow intro-animate delay-1">HELLO, I'M</p>
 
         <h1 className="intro-animate delay-2">
           Aditi
@@ -18,103 +21,75 @@ function Home() {
         </h1>
 
         <h2 className="intro-animate delay-3">
-          Crafting digital
-          <br />
-          <span>experiences that work.</span>
+          BUILDING DIGITAL EXPERIENCES. <span>LEARNING THE SYSTEMS BEHIND THEM.</span>
         </h2>
 
         <p className="intro intro-animate delay-4">
-          Computer Science undergraduate who enjoys building
-          user-focused web applications, solving problems,
-          and turning ideas into meaningful digital experiences.
+          Computer Science undergraduate building responsive web applications with React and JavaScript, strengthening problem-solving fundamentals, and exploring AI, full-stack development, cloud and security.
         </p>
 
         <div className="home-buttons intro-animate delay-5">
-
-          <Link to="/projects" className="primary-btn">
-            EXPLORE MY WORK →
-          </Link>
-
-          <Link to="/contact" className="outline-btn">
-            LET'S CONNECT
-          </Link>
-
+          <Link to="/projects" className="primary-btn">EXPLORE MY WORK <span>→</span></Link>
+          <Link to="/contact" className="outline-btn">LET'S CONNECT <span>↗</span></Link>
         </div>
 
         <div className="home-tags intro-animate delay-6">
           <span>REACT</span>
-          <span>JAVASCRIPT</span>
-          <span>PYTHON</span>
-          <span>GIT</span>
+          <span>FULL STACK</span>
+          <span>AI / ML</span>
+          <span>DSA</span>
         </div>
-        
-        <button
-  className="terminal-trigger"
-  onClick={() => setTerminalOpen(true)}
->
-  &gt; OPEN_TERMINAL
-</button>
 
-        {/* MOVING SIGNATURE */}
+        <div className="code-detail intro-animate delay-6">
+          <span className="code-detail-mark">&gt;</span>
+          <code>const build = <b>"something meaningful"</b>;</code>
+        </div>
 
-        <div className="availability-wrapper intro-animate delay-6">
+        <button className="terminal-trigger" onClick={() => setTerminalOpen(true)}>
+          &gt; OPEN_TERMINAL
+        </button>
+      </div>
 
-          <div className="availability-track">
+      <div className="glass-sculpture" aria-hidden="true">
+        <span className="glass-ribbon glass-ribbon-back"></span>
+        <span className="glass-ribbon glass-ribbon-front"></span>
+        <span className="glass-highlight"></span>
+      </div>
 
-            <div className="availability-text">
-              AVAILABLE FOR
-              <span>INTERNSHIPS</span>
-              <b>•</b>
-              <span>PROJECTS</span>
-              <b>•</b>
-              <span>COLLABORATIONS</span>
-              <b>•</b>
-
-              AVAILABLE FOR
-              <span>INTERNSHIPS</span>
-              <b>•</b>
-              <span>PROJECTS</span>
-              <b>•</b>
-              <span>COLLABORATIONS</span>
-              <b>•</b>
-            </div>
-
+      <section className="system-card intro-animate delay-6" aria-label="System status">
+        <div className="system-card-top">
+          <div className="system-title">
+            <span className="pulse-dot"></span>
+            SYSTEM STATUS <b>— ONLINE</b>
           </div>
-
+          <span className="system-index">01 / 04</span>
         </div>
 
-      </div>
-
-      {/* CURRENTLY */}
-
-      <div className="currently-card intro-animate delay-6">
-
-        <div className="currently-heading">
-          <span className="pulse-dot"></span>
-          CURRENTLY ACTIVE
-        </div>
-
-        <div className="currently-item">
+        <div className="system-row">
           <span>LEARNING</span>
-          <strong>DSA & ALGORITHMS</strong>
+          <strong>DSA &amp; ALGORITHMS</strong>
         </div>
-
-        <div className="currently-item">
+        <div className="system-row">
           <span>BUILDING</span>
-          <strong>REACT PROJECTS</strong>
+          <strong>REACT / FULL STACK</strong>
         </div>
-
-        <div className="currently-item">
+        <div className="system-row">
           <span>EXPLORING</span>
-          <strong>CLOUD & SECURITY</strong>
+          <strong>CLOUD &amp; SECURITY</strong>
+        </div>
+        <div className="system-row">
+          <span>CURRENTLY</span>
+          <strong>RAKSHAK AI</strong>
         </div>
 
-        <div className="currently-item">
-          <span>WORKING ON</span>
-          <strong>FULL STACK DEVELOPMENT</strong>
+        <div className="system-card-footer">
+          <span>STATUS</span>
+          <strong><i></i> ONLINE</strong>
         </div>
+      </section>
 
-      </div>
+      <span className="hero-coordinate coordinate-top">28.6139° N / 77.2090° E</span>
+      <span className="hero-coordinate coordinate-bottom">BUILD / 2025—29</span>
       {terminalOpen && (
   <div className="terminal-overlay">
 
@@ -191,13 +166,9 @@ function Home() {
 )}
 
       <div className="home-meta intro-animate delay-6">
-
         <span>CS / IT</span>
-
         <span>ADITI JINDAL</span>
-
         <span>2025 — 2029</span>
-
       </div>
 
     </main>

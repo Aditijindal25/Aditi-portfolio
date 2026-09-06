@@ -82,9 +82,7 @@ function Skills() {
           </span>
 
           <p>
-            Technologies, concepts and tools I've
-            worked with while building projects and
-            exploring software development.
+            A practical toolkit spanning product development, programming fundamentals and the systems knowledge I am building toward stronger software engineering work.
           </p>
 
         </div>

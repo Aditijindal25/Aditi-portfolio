@@ -5,7 +5,7 @@ function Journey() {
       title: "B.TECH — CS & IT",
       organization: "Krishna Institute of Engineering and Technology",
       description:
-        "Computer Science and Information Technology · CGPA: 8.03",
+        "Computer Science and Information Technology · CGPA: 8.03 · Focused on software engineering, algorithms and applied systems.",
     },
 
     {
@@ -13,7 +13,7 @@ function Journey() {
       title: "FULL STACK WEB DEVELOPMENT INTERN",
       organization: "Future Interns",
       description:
-        "One-month internship focused on full stack web development, practical project development, skill development, and real-world application.",
+        "One-month full-stack internship focused on shipping practical web projects, applying development workflows, and turning requirements into working software.",
     },
 
     {
@@ -21,7 +21,7 @@ function Journey() {
       title: "SMART INDIA HACKATHON",
       organization: "Hackathon",
       description:
-        "Contributed to a team-based solution focused on solving real-world problems.",
+        "Worked in a team-based problem-solving environment focused on translating a real-world challenge into a usable technical solution.",
     },
 
     {
@@ -29,7 +29,7 @@ function Journey() {
       title: "ICAC CHAMPIONSHIP",
       organization: "Competitive Programming",
       description:
-        "Participated in competitive programming and problem-solving.",
+        "Built competitive programming discipline through timed problem solving, algorithmic reasoning and implementation under constraints.",
     },
 
     {
@@ -37,7 +37,7 @@ function Journey() {
       title: "GIRLSCRIPT SUMMER OF CODE",
       organization: "Open Source",
       description:
-        "Contributed to open-source development.",
+        "Practiced collaborative development through open-source contribution, code review and working within an existing project context.",
     },
 
     {
@@ -45,7 +45,7 @@ function Journey() {
       title: "PYTHON WEATHER APPLICATION",
       organization: "Personal Project",
       description:
-        "Built a Python-based weather application using APIs, Git, and GitHub.",
+        "Built a Python weather application using API integration, Git and GitHub, with a focus on consuming external data reliably.",
     },
 
     {
@@ -53,7 +53,7 @@ function Journey() {
       title: "SOCIAL INTERNSHIP",
       organization: "Government School",
       description:
-        "Led a social internship and conducted cybersecurity workshops for 60+ students using AI-powered tools and interactive content.",
+        "Led a social internship and delivered cybersecurity workshops for 60+ students using AI-supported tools and interactive learning content.",
     },
   ];
 
@@ -71,9 +71,9 @@ function Journey() {
         </p>
 
         <h1 className="page-title">
-          Still
+          Evidence in
           <br />
-          <span>becoming.</span>
+          <span>progress.</span>
         </h1>
 
       </div>
