@@ -1,155 +1,163 @@
-# Aditi Jindal — Systems & Software Engineering Portfolio
+# Aditi Jindal — Developer Portfolio
 
-[![CI Pipeline](https://github.com/Aditijindal25/Aditi-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Aditijindal25/Aditi-portfolio/actions)
-[![Lighthouse Performance](https://img.shields.io/badge/Lighthouse-100%2F100-brightgreen.svg)](https://aditi-portfolio-smoky.vercel.app/)
-[![React 19](https://img.shields.io/badge/React-19.2-61dafb.svg?logo=react&logoColor=black)](https://react.dev)
-[![Vite](https://img.shields.io/badge/Vite-8.2-646CFF.svg?logo=vite&logoColor=white)](https://vite.dev)
-[![Vitest](https://img.shields.io/badge/Tested%20with-Vitest-yellow.svg?logo=vitest&logoColor=white)](https://vitest.dev)
-[![Code Style](https://img.shields.io/badge/Code%20Style-ESLint%20Strict-blueviolet.svg)](https://eslint.org)
+A modern, responsive developer portfolio built with **React.js** to showcase my projects, technical skills, development journey, and contact information.
 
-> High-performance developer portfolio engineered to FAANG / Big Tech production standards. Features interactive system architecture case studies, real-time command palette (`⌘K`), functional interactive terminal emulator, and automated regression testing.
-
-🔗 **Live Production Deployment:** [https://aditi-portfolio-smoky.vercel.app/](https://aditi-portfolio-smoky.vercel.app/)
+🔗 **Live Portfolio:** https://aditi-portfolio-smoky.vercel.app/
 
 ---
 
-## 🏛️ System Architecture & Engineering Highlights
+## ✨ About the Project
 
-```mermaid
-flowchart TD
-    Client["Client Browser (React 19 + Vite)"] --> Router["React Router v7 / MemoryRouter"]
-    Router --> Pages["Page Modules (Home, Projects, Skills, Build, Proof)"]
-    Pages --> CaseStudyEngine["Interactive System Design Case Study Engine"]
-    Pages --> TerminalEmulator["Interactive Zsh Shell Emulator"]
-    Pages --> CommandPalette["Command Palette (⌘K) Keyboard Engine"]
-    
-    subgraph Rigor["Engineering Rigor & CI/CD"]
-        Lint["ESLint Strict"] --> CI["GitHub Actions Pipeline"]
-        Tests["Vitest + React Testing Library"] --> CI
-        BuildCheck["Vite Production Bundler"] --> CI
-    end
-```
+This portfolio was created to present my web development work in a clean, modern, and interactive interface.
 
-### Core Architecture Pillars:
-1. **System Design & Case Study Engine:** Rather than generic project cards, projects are presented as in-depth architectural case studies detailing the **Engineering Challenge**, **System Solution**, **ASCII Flow Diagrams**, **Architecture Trade-offs**, and **Benchmarked Metrics** ($O(V \cdot 2^V)$ Cash Flow DP, INT8 quantized neural inference, WebRTC mesh, and DOM windowing).
-2. **Interactive Terminal CLI (`aditi@dev:~$`):** A custom keyboard-operable terminal emulator supporting command parsing (`help`, `projects`, `skills`, `arch`, `metrics`, `status`, `whoami`, `contact`, `clear`), history navigation (Up/Down arrow keys), and formatted ASCII output.
-3. **Command Palette (`⌘K`):** Global accessible keyboard navigation modal with fuzzy command filtering, dynamic keyboard shortcut handlers, and zero layout shift.
-4. **Engineering Capability Matrix:** Capability breakdown covering Systems Programming (C/C++, Python, TypeScript), Frontend Systems, Distributed Architecture (Redis Redlock, WebSockets), Graph Algorithms, and Cloud/DevOps.
+It includes dedicated sections for my introduction, projects, technical skills, learning journey, and contact information.
+
+The design focuses on a minimal dark theme with purple accents, animations, interactive elements, and responsive layouts.
 
 ---
 
-## ⚡ Performance Benchmarks & Web Vitals
+## 🚀 Features
 
-| Core Web Vital | Metric Value | Google / FAANG Threshold | Status |
-| :--- | :--- | :--- | :--- |
-| **First Contentful Paint (FCP)** | `0.4s` | $< 1.8\text{s}$ | 🟢 Optimal |
-| **Largest Contentful Paint (LCP)** | `0.8s` | $< 2.5\text{s}$ | 🟢 Optimal |
-| **Total Blocking Time (TBT)** | `0ms` | $< 200\text{ms}$ | 🟢 Optimal |
-| **Cumulative Layout Shift (CLS)** | `0.00` | $< 0.1$ | 🟢 Optimal |
-| **Production Build Duration** | `437ms` | Sub-second | 🟢 Lightning |
-
----
-
-## 🛠️ Technology Stack
-
-- **Core Framework:** React 19, JavaScript (ESNext), React Router v7
-- **Build System:** Vite 8.2 with Rollup code-splitting & tree-shaking
-- **Testing & Assertions:** Vitest, React Testing Library, `@testing-library/jest-dom`, JSDOM
-- **CI/CD Automation:** GitHub Actions (`.github/workflows/ci.yml`)
-- **Code Quality:** ESLint with strict React hooks and accessibility rules
-- **Deployment Platform:** Vercel Edge Network
+* Modern dark-themed UI
+* Fully responsive design
+* Interactive navigation
+* Project showcase with GitHub links
+* Skills section with interactive hover effects
+* Journey / experience section
+* Contact section
+* Animated page transitions
+* Homepage entrance animations
+* Availability status section
+* Interactive terminal Easter egg
+* Responsive mobile layout
+* Deployed on Vercel
 
 ---
 
-## 🧪 Automated Testing & CI Pipeline
+## 🛠️ Technologies Used
 
-The project enforces automated test execution and linting on every push and pull request via GitHub Actions:
+* **React.js**
+* **JavaScript**
+* **HTML5**
+* **CSS3**
+* **Vite**
+* **Git**
+* **GitHub**
+* **Vercel**
+
+---
+
+## 📂 Portfolio Sections
+
+### 🏠 Home
+
+Introduces me as a developer and provides a quick overview of my technical interests and current focus.
+
+### 👩‍💻 About
+
+A brief introduction about me, my development interests, and my approach to learning and building projects.
+
+### 🛠️ Skills
+
+Showcases my technical skills and technologies that I have been learning and working with.
+
+### 💻 Projects
+
+A collection of projects I have built, including:
+
+* **Smart Splitter** — Expense Management
+* **Skill Swap** — Learning Platform
+* **CareerLaunch** — Career Dashboard
+* **Photography Site** — Visual Web Design
+
+Each project includes a link to its GitHub repository.
+
+### 📚 Journey
+
+Highlights my learning and development journey.
+
+### 📩 Contact
+
+Provides ways to connect with me and explore my professional profiles.
+
+---
+
+## 🎨 Design
+
+The portfolio uses a minimal and modern visual style featuring:
+
+* Dark background
+* Purple accent color
+* Monospace typography for technical elements
+* Grid-based background
+* Smooth animations
+* Hover interactions
+* Responsive layouts
+
+---
+
+## 💡 Key Learnings
+
+While building this portfolio, I strengthened my understanding of:
+
+* React component development
+* State management with `useState`
+* Responsive CSS layouts
+* CSS animations and transitions
+* Interactive UI design
+* Git and GitHub workflow
+* Deploying React applications using Vercel
+* Debugging and improving frontend interactions
+
+---
+
+## ⚙️ Run Locally
+
+Clone the repository:
 
 ```bash
-# Run Vitest test suites
-npm run test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run ESLint validation
-npm run lint
-
-# Compile production bundle
-npm run build
+git clone YOUR_GITHUB_REPOSITORY_URL
 ```
 
----
+Navigate into the project:
 
-## 📂 Project Structure
-
-```
-aditi-portfolio/
-├── .github/
-│   └── workflows/
-│       └── ci.yml               # Automated CI pipeline (lint, test, build)
-├── public/                      # Static assets & favicon
-├── src/
-│   ├── assets/                  # Optimized visual assets
-│   ├── components/
-│   │   ├── CaseStudyModal.jsx   # Multi-tab System Design Case Study Engine
-│   │   ├── InteractionLayer.jsx # Ambient cursor & micro-interaction layer
-│   │   └── Navbar.jsx           # Accessible navigation & ⌘K command palette
-│   ├── data/
-│   │   └── projectsData.js      # Architectural specs, metrics & tradeoff logs
-│   ├── pages/
-│   │   ├── About.jsx            # Engineering profile & systems foundations
-│   │   ├── Achievements.jsx     # Quantifiable impact metrics & hackathon proof
-│   │   ├── Build.jsx            # RFC & production engineering methodology
-│   │   ├── Contact.jsx          # Endpoints & professional channels
-│   │   ├── Home.jsx             # Hero, telemetry status & interactive shell
-│   │   ├── Journey.jsx          # Google XYZ engineering track record
-│   │   ├── Projects.jsx         # Production systems showcase with filters
-│   │   └── Skills.jsx           # Engineering Capability Matrix
-│   ├── test/
-│   │   ├── setup.js             # Jest DOM matchers initialization
-│   │   ├── Navbar.test.jsx      # Navigation & command palette unit tests
-│   │   └── Projects.test.jsx    # Projects & case study engine test suite
-│   ├── App.css                  # Hardware-accelerated theme styling
-│   ├── App.jsx                  # Route definitions & transitions
-│   ├── index.css                # Global CSS reset & typography tokens
-│   └── main.jsx                 # React root entrypoint
-├── vite.config.js               # Vite & Vitest test runner configuration
-├── package.json                 # Dependency manifests & test scripts
-└── README.md                    # Engineering documentation
+```bash
+cd your-project-folder
 ```
 
----
+Install dependencies:
 
-## 🚀 Local Development Setup
+```bash
+npm install
+```
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Aditijindal25/Aditi-portfolio.git
-   cd Aditi-portfolio
-   ```
+Start the development server:
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+```bash
+npm run dev
+```
 
-3. **Start local development server:**
-   ```bash
-   npm run dev
-   ```
+The application will then be available through the local development URL provided by Vite.
 
-4. **Execute automated tests:**
-   ```bash
-   npm run test
-   ```
+## 🌐 Live Demo
 
----
+**Portfolio:**
+https://aditi-portfolio-smoky.vercel.app/
 
 ## 👩‍💻 Author
 
-**Aditi Jindal**  
-*Computer Science & Information Technology | Software & Systems Engineer*  
-- **GitHub:** [@Aditijindal25](https://github.com/Aditijindal25)  
-- **LinkedIn:** [aditijindal2506](https://www.linkedin.com/in/aditijindal2506/)  
-- **Email:** [aditijindal441@gmail.com](mailto:aditijindal441@gmail.com)
+**Aditi Jindal**
+
+Frontend / Full Stack Web Development Enthusiast
+
+## 📌 Future Improvements
+
+* Add more projects
+* Improve accessibility
+* Add additional interactive components
+* Continue improving responsive design
+* Add more advanced full-stack projects
+
+---
+
+⭐ If you like the project, feel free to explore the portfolio and my other projects!

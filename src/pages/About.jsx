@@ -1,96 +1,111 @@
+
 function About() {
   return (
     <main className="page">
-      <div className="page-number">01 / ABOUT THE ENGINEER</div>
+
+      <div className="page-number">
+        01 / ABOUT
+      </div>
 
       <div className="about-layout">
-        {/* LEFT COLUMN */}
+
+        {/* LEFT SIDE */}
         <div className="about-intro">
-          <p className="eyebrow">ENGINEERING PROFILE</p>
+
+          <p className="eyebrow">
+            WHO I AM
+          </p>
+
           <h1 className="page-title">
-            Engineering with
+            Building with
             <br />
-            <span>mathematical intent.</span>
+            <span>purpose.</span>
           </h1>
 
           <p className="about-tagline">
-            Systems thinker. Algorithmic problem solver.
+            Developer. Problem solver.
             <br />
-            Obsessed with latency, resilience &amp; clean design.
+            Constantly learning.
           </p>
+
         </div>
 
-        {/* RIGHT COLUMN */}
+        {/* RIGHT SIDE */}
         <div className="about-content">
+
           <p className="big-text">
-            I am Aditi Jindal, a Computer Science &amp; IT undergraduate engineering distributed transaction pipelines,
-            real-time telemetry systems, and high-performance web applications.
+            I'm Aditi Jindal, a Computer Science and Information Technology undergraduate focused on building useful software and developing the fundamentals to engineer it well.
           </p>
 
           <p>
-            My engineering philosophy is rooted in algorithmic rigor and defensive software design. Whether optimizing
-            debt settlement graphs from $O(V!)$ down to $O(V \cdot 2^V)$, designing double-entry ledger invariants with
-            Redis distributed locks, or running quantized ONNX models at the edge for packet anomaly detection, I focus on
-            building systems that hold up under real-world constraints.
+            I build responsive web applications with React, JavaScript and Python, with an emphasis on clear interfaces, maintainable code and practical user outcomes.
           </p>
 
           <p>
-            Beyond architecture, I believe modern software teams thrive on engineering hygiene: comprehensive automated testing
-            (Vitest / Jest), strict continuous integration pipelines (GitHub Actions), containerized workflows (Docker), and
-            relentless attention to Core Web Vitals and accessibility.
+            Alongside product work, I am strengthening data structures and algorithms, exploring AI/ML and cloud systems, and using internships, hackathons and open source to learn how strong engineering teams ship.
           </p>
 
-          {/* CURRENT INITIATIVES */}
+          {/* CURRENTLY */}
           <div className="about-current">
-            <span className="about-label">ACTIVE ENGINEERING FOCUS</span>
+
+            <span className="about-label">
+              CURRENTLY
+            </span>
+
             <p>
-              Architecting distributed transactional settlement engines, benchmarking high-throughput WebSocket pipelines,
-              and advancing competitive programming problem-solving across graph algorithms and dynamic programming.
+              Building full-stack projects, improving algorithmic problem solving, and looking for opportunities to contribute to high-ownership engineering work.
             </p>
+
           </div>
 
-          {/* METRIC / FOCUS CARDS */}
+          {/* INFO CARDS */}
           <div className="about-cards">
+
             <div className="about-card">
               <span>01</span>
-              <h3>FOUNDATIONS</h3>
+
+              <h3>EDUCATION</h3>
+
               <p>
-                B.Tech in CS &amp; IT
+                B.Tech — CS & IT
                 <br />
-                KIET Ghaziabad (CGPA: 8.03)
-                <br />
-                DSA &amp; OS Fundamentals
+                KIET Ghaziabad
               </p>
             </div>
 
             <div className="about-card">
               <span>02</span>
-              <h3>SYSTEMS FOCUS</h3>
+
+              <h3>FOCUS</h3>
+
               <p>
-                Distributed Ledgers
+                Software Development
                 <br />
-                Edge AI &amp; Telemetry
-                <br />
-                High-Framerate Frontend
+                AI/ML & Intelligent Systems
               </p>
             </div>
 
             <div className="about-card">
               <span>03</span>
-              <h3>HYGIENE &amp; TOOLS</h3>
+
+              <h3>INTERESTS</h3>
+
               <p>
-                TDD &amp; Automated CI/CD
+                Web Development
                 <br />
-                Docker &amp; Containerization
-                <br />
-                Open Source (GSSoC)
+                Open Source & Problem Solving
               </p>
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </main>
   );
 }
 
 export default About;
+

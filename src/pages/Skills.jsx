@@ -6,138 +6,155 @@ function Skills() {
   const skillGroups = [
     {
       number: "01",
-      title: "Systems & Core Languages",
-      description: "Low-level awareness, statically typed contracts, and asynchronous event loops",
-      skills: ["TypeScript", "Python", "C / C++", "JavaScript (ESNext)", "SQL", "POSIX Shell"],
-      capabilities: [
-        "Memory Awareness & Pointers",
-        "Strict Type-Safe API Contracts",
-        "Async Event Loop Optimization",
-      ],
+      title: "Programming",
+      description: "Languages & programming fundamentals",
+      skills: ["C", "Python", "JavaScript"],
     },
     {
       number: "02",
-      title: "Frontend Systems & Web Performance",
-      description: "High-framerate rendering, state machines, offline persistence, and Web Vitals",
-      skills: ["React 19", "DOM Virtualization", "IndexedDB", "Web Workers", "Tailwind CSS", "Vite"],
-      capabilities: [
-        "Sub-1.2s LCP & Zero CLS",
-        "60 FPS List Virtualization",
-        "Optimistic UI & Offline Sync",
+      title: "Web Development",
+      description: "Modern frontend development",
+      skills: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Vite",
+        "Tailwind CSS",
       ],
     },
     {
       number: "03",
-      title: "Backend & Distributed Systems",
-      description: "Microservice communication, distributed concurrency control, and transactional ledgers",
-      skills: ["Node.js / Express", "FastAPI (Python)", "Redis (Redlock)", "WebSockets", "WebRTC", "REST APIs"],
-      capabilities: [
-        "Distributed Mutex & Concurrency",
-        "Event-Driven Microservices",
-        "Double-Entry Ledger Invariants",
-      ],
+      title: "Problem Solving",
+      description: "Logic, algorithms & data structures",
+      skills: ["DSA", "Problem Solving", "Algorithm Design"],
     },
     {
       number: "04",
-      title: "Algorithms & Graph Theory",
-      description: "Graph optimization, dynamic programming with bitmasking, and optimal asymptotic bounds",
-      skills: ["Min-Cost Flow", "Bitmask DP", "Graphs & Trees", "Heaps & Priority Queues", "Union-Find"],
-      capabilities: [
-        "O(V·2^V) Cycle Minimization",
-        "Time-Space Bound Optimization",
-        "Rigorous Invariant Verification",
+      title: "Fundamentals",
+      description: "Core computer science concepts",
+      skills: [
+        "OOP",
+        "DOM Manipulation",
+        "Responsive Design",
+        "OS",
       ],
     },
     {
       number: "05",
-      title: "Storage Engines & Cache Topologies",
-      description: "Relational normalization, ACID transactions, index optimization, and cache-aside patterns",
-      skills: ["PostgreSQL", "Redis Cache-Aside", "MongoDB", "ACID Invariants", "Materialized Views"],
-      capabilities: [
-        "Query Execution Plan Tuning",
-        "Cache Invalidation & TTL Jitter",
-        "Strict Foreign Key Constraints",
-      ],
+      title: "Tools",
+      description: "Development & collaboration workflow",
+      skills: ["Git", "GitHub", "VS Code"],
     },
     {
       number: "06",
-      title: "DevOps, CI/CD & Engineering Hygiene",
-      description: "Automated pipelines, containerization, test-driven development, and runtime isolation",
-      skills: ["Docker", "GitHub Actions CI", "Vitest & RTL", "Linux Environment", "Git Flow", "Vercel"],
-      capabilities: [
-        "Automated Test Regression CI",
-        "Containerized Multi-Stage Builds",
-        "Defensive Production Logging",
-      ],
+      title: "Cloud & Security",
+      description: "Cloud infrastructure & security basics",
+      skills: ["IAM", "Basic Security Concepts"],
     },
   ];
 
   return (
     <main className="page skills-page">
-      <div className="page-number">02 / CAPABILITY MATRIX</div>
 
-      <header className="skills-header">
+      <div className="page-number">
+        02 / SKILLS
+      </div>
+
+      <div className="skills-header">
+
         <div>
-          <p className="eyebrow">ENGINEERING CAPABILITIES</p>
+          <p className="eyebrow">
+            MY TOOLKIT
+          </p>
+
           <h1 className="page-title">
-            Systems &amp;
+            What I
             <br />
-            <span>engineering matrix.</span>
+            <span>work with</span>
           </h1>
         </div>
 
         <div className="skills-intro">
-          <span className="skills-intro-label">06 CORE DOMAINS</span>
+
+          <span className="skills-intro-label">
+            06 AREAS
+          </span>
+
           <p>
-            An engineering capability matrix spanning distributed ledger guarantees, real-time edge telemetry,
-            asymptotic algorithm optimization, and production frontend architecture.
+            A practical toolkit spanning product development, programming fundamentals and the systems knowledge I am building toward stronger software engineering work.
           </p>
+
         </div>
-      </header>
+
+      </div>
 
       <div className="skills-list">
+
         {skillGroups.map((skill) => (
-          <article
+
+          <div
             className={`skill-row ${
-              activeSkill === skill.number ? "skill-active" : ""
+              activeSkill === skill.number
+                ? "skill-active"
+                : ""
             } ${
-              activeSkill !== null && activeSkill !== skill.number ? "skill-dim" : ""
+              activeSkill !== null &&
+              activeSkill !== skill.number
+                ? "skill-dim"
+                : ""
             }`}
             key={skill.number}
-            onMouseEnter={() => setActiveSkill(skill.number)}
-            onMouseLeave={() => setActiveSkill(null)}
+            onMouseEnter={() =>
+              setActiveSkill(skill.number)
+            }
+            onMouseLeave={() =>
+              setActiveSkill(null)
+            }
           >
-            <div className="skill-number">{skill.number}</div>
+
+            <div className="skill-number">
+              {skill.number}
+            </div>
 
             <div className="skill-main">
-              <h2>{skill.title}</h2>
-              <p className="skill-description">{skill.description}</p>
 
-              {/* Architectural Capabilities */}
-              <div className="skill-capabilities">
-                {skill.capabilities.map((cap, i) => (
-                  <span key={i} className="skill-cap-item">
-                    &bull; {cap}
-                  </span>
-                ))}
-              </div>
+              <h2>
+                {skill.title}
+              </h2>
+
+              <p className="skill-description">
+                {skill.description}
+              </p>
+
             </div>
 
             <div className="skill-tags">
+
               {skill.skills.map((item) => (
-                <span key={item}>{item}</span>
+                <span key={item}>
+                  {item}
+                </span>
               ))}
+
             </div>
-          </article>
+
+          </div>
+
         ))}
+
       </div>
 
-      <footer className="skills-footer">
-        <span>PRIMARY PRODUCTION STACK</span>
+      <div className="skills-footer">
+
+        <span>CORE STACK</span>
+
         <p>
-          TypeScript · React 19 · Node.js · Redis · PostgreSQL · Python · Docker · Vitest
+          React · JavaScript · Python · Git
         </p>
-      </footer>
+
+      </div>
+
     </main>
   );
 }
