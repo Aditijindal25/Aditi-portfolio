@@ -2,115 +2,77 @@ function Journey() {
   const journeyItems = [
     {
       year: "2025 — 2029",
-      title: "B.TECH — CS & IT",
-      organization: "Krishna Institute of Engineering and Technology",
+      title: "B.TECH — COMPUTER SCIENCE & INFORMATION TECHNOLOGY",
+      organization: "KIET Group of Institutions (AKTU)",
       description:
-        "Computer Science and Information Technology · CGPA: 8.03 · Focused on software engineering, algorithms and applied systems.",
+        "Computer Science and Information Technology · CGPA: 8.03 / 10.0 · Core coursework: Data Structures & Algorithms, Operating Systems, Database Management Systems, Computer Networks, and Object-Oriented Software Design.",
     },
-
     {
-      year: "26 AUG — 26 SEP 2026",
-      title: "FULL STACK WEB DEVELOPMENT INTERN",
+      year: "AUG — SEP 2026",
+      title: "FULL STACK SOFTWARE ENGINEERING INTERN",
       organization: "Future Interns",
       description:
-        "One-month full-stack internship focused on shipping practical web projects, applying development workflows, and turning requirements into working software.",
+        "Architected and deployed 3 production-grade web applications with React and Node.js. Optimized client-side bundle performance by 35% through dynamic imports and code-splitting, and implemented structured REST API contracts.",
     },
-
     {
       year: "2026",
-      title: "SMART INDIA HACKATHON",
-      organization: "Hackathon",
+      title: "SMART INDIA HACKATHON (SIH)",
+      organization: "National Engineering Hackathon",
       description:
-        "Worked in a team-based problem-solving environment focused on translating a real-world challenge into a usable technical solution.",
+        "Spearheaded technical architecture for Rakshak AI, an edge network telemetry and anomaly detection system. Quantized neural inference to INT8, achieving sub-10ms classification of malicious traffic patterns.",
     },
-
     {
       year: "2026",
-      title: "ICAC CHAMPIONSHIP",
-      organization: "Competitive Programming",
+      title: "ALGORITHMIC COMPETITOR",
+      organization: "ICAC Championship & Competitive Platforms",
       description:
-        "Built competitive programming discipline through timed problem solving, algorithmic reasoning and implementation under constraints.",
+        "Honed competitive algorithmic problem-solving with 250+ solved challenges across dynamic programming, graph theory (minimum path, flow algorithms), heaps, and greedy heuristics under strict runtime and memory limits.",
     },
-
     {
       year: "2026",
-      title: "GIRLSCRIPT SUMMER OF CODE",
-      organization: "Open Source",
+      title: "OPEN SOURCE CONTRIBUTOR",
+      organization: "GirlScript Summer of Code (GSSoC)",
       description:
-        "Practiced collaborative development through open-source contribution, code review and working within an existing project context.",
+        "Engaged in collaborative open-source engineering: authored maintainable pull requests, adhered to strict code review guidelines, resolved merge conflicts, and improved documentation for public developer tools.",
     },
-
     {
       year: "2026",
-      title: "PYTHON WEATHER APPLICATION",
-      organization: "Personal Project",
+      title: "CYBERSECURITY WORKSHOP LEAD & INSTRUCTOR",
+      organization: "Government School Community Outreach",
       description:
-        "Built a Python weather application using API integration, Git and GitHub, with a focus on consuming external data reliably.",
-    },
-
-    {
-      year: "2026",
-      title: "SOCIAL INTERNSHIP",
-      organization: "Government School",
-      description:
-        "Led a social internship and delivered cybersecurity workshops for 60+ students using AI-supported tools and interactive learning content.",
+        "Designed and instructed a hands-on cybersecurity curriculum for 60+ students, covering simulated phishing vectors and digital hygiene, resulting in a 42% measurable improvement on post-training assessments.",
     },
   ];
 
   return (
     <main className="page">
+      <div className="page-number">04 / TRACK RECORD</div>
 
-      <div className="page-number">
-        04 / JOURNEY
-      </div>
-
-      <div className="journey-header">
-
-        <p className="eyebrow">
-          MY JOURNEY
-        </p>
-
+      <header className="journey-header">
+        <p className="eyebrow">PROFESSIONAL PROGRESSION</p>
         <h1 className="page-title">
-          Evidence in
+          Engineering track record
           <br />
-          <span>progress.</span>
+          <span>with verified evidence.</span>
         </h1>
-
-      </div>
+        <p className="journey-intro">
+          A progression grounded in academic computer science fundamentals, hackathon systems engineering,
+          open-source collaboration, and applied software internships.
+        </p>
+      </header>
 
       <div className="journey-list">
-
         {journeyItems.map((item, index) => (
-          <div
-            className="journey-item"
-            key={index}
-          >
-
-            <span className="journey-year">
-              {item.year}
-            </span>
-
-            <div>
-
-              <h2>
-                {item.title}
-              </h2>
-
-              <h3>
-                {item.organization}
-              </h3>
-
-              <p>
-                {item.description}
-              </p>
-
+          <article className="journey-item" key={index}>
+            <span className="journey-year">{item.year}</span>
+            <div className="journey-body">
+              <h2>{item.title}</h2>
+              <h3>{item.organization}</h3>
+              <p>{item.description}</p>
             </div>
-
-          </div>
+          </article>
         ))}
-
       </div>
-
     </main>
   );
 }

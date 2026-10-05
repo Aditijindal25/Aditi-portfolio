@@ -48,9 +48,7 @@ function Navbar() {
     }
   }, [paletteOpen]);
 
-  useEffect(() => {
-    setActiveIndex((index) => Math.min(index, Math.max(filteredCommands.length - 1, 0)));
-  }, [filteredCommands.length]);
+  const safeActiveIndex = Math.min(activeIndex, Math.max(filteredCommands.length - 1, 0));
 
   const closePalette = () => {
     setPaletteOpen(false);
@@ -77,8 +75,8 @@ function Navbar() {
       setActiveIndex((index) => (index - 1 + filteredCommands.length) % Math.max(filteredCommands.length, 1));
     }
 
-    if (event.key === "Enter" && filteredCommands[activeIndex]) {
-      executeCommand(filteredCommands[activeIndex]);
+    if (event.key === "Enter" && filteredCommands[safeActiveIndex]) {
+      executeCommand(filteredCommands[safeActiveIndex]);
     }
   };
 
@@ -133,12 +131,12 @@ function Navbar() {
             <div className="command-list" role="listbox" aria-label="Workspace commands">
               {filteredCommands.length > 0 ? filteredCommands.map((command, index) => (
                 <button
-                  className={`command-item ${index === activeIndex ? "command-item-active" : ""}`}
+                  className={`command-item ${index === safeActiveIndex ? "command-item-active" : ""}`}
                   key={command.label}
                   onMouseEnter={() => setActiveIndex(index)}
                   onClick={() => executeCommand(command)}
                   role="option"
-                  aria-selected={index === activeIndex}
+                  aria-selected={index === safeActiveIndex}
                 >
                   <span className="command-item-arrow">→</span>
                   <span className="command-item-copy">
