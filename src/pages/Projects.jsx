@@ -128,7 +128,7 @@ function ProjectModal({ project, opener, onClose }) {
             <section className="project-architecture" aria-labelledby="project-architecture-title">
               <h3 id="project-architecture-title">Architecture</h3>
               <div className="architecture-flow">
-                {project.architecture.map((node, index) => (
+                {project.architecture?.map((node, index) => (
                   <div className="architecture-node" key={node.label}>
                     <span>{node.label}</span>
                     <strong>{node.value}</strong>
