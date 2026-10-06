@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
 function InteractionLayer() {
-  const cursorRef = useRef(null);
   const labelRef = useRef(null);
   const progressRef = useRef(null);
   const frameRef = useRef(null);
   const pointerRef = useRef({ x: -100, y: -100 });
   const currentRef = useRef({ x: -100, y: -100 });
-  const [cursorLabel, setCursorLabel] = useState("");
-  const [isPointerMode, setIsPointerMode] = useState(false);
+  const projectHoveredRef = useRef(false);
+  const [isProjectHovered, setIsProjectHovered] = useState(false);
 
   useEffect(() => {
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -23,22 +22,24 @@ function InteractionLayer() {
       const current = currentRef.current;
       current.x += (target.x - current.x) * 0.18;
       current.y += (target.y - current.y) * 0.18;
+      labelRef.current?.style.setProperty("--cursor-x", `${current.x + 14}px`);
+      labelRef.current?.style.setProperty("--cursor-y", `${current.y + 14}px`);
 
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${current.x}px, ${current.y}px, 0)`;
+      if (Math.abs(target.x - current.x) > 0.5 || Math.abs(target.y - current.y) > 0.5) {
+        frameRef.current = requestAnimationFrame(render);
+      } else {
+        frameRef.current = null;
       }
-
-      if (labelRef.current) {
-        labelRef.current.style.transform = `translate3d(${current.x + 18}px, ${current.y + 18}px, 0)`;
-      }
-
-      frameRef.current = requestAnimationFrame(render);
     };
 
     const handlePointerMove = (event) => {
       pointerRef.current = { x: event.clientX, y: event.clientY };
       document.documentElement.style.setProperty("--pointer-x", `${(event.clientX - window.innerWidth / 2) * 0.018}px`);
       document.documentElement.style.setProperty("--pointer-y", `${(event.clientY - window.innerHeight / 2) * 0.018}px`);
+
+      if (projectHoveredRef.current && frameRef.current === null) {
+        frameRef.current = requestAnimationFrame(render);
+      }
 
       const magnetic = event.target.closest("[data-magnetic]");
       if (magnetic) {
@@ -51,16 +52,20 @@ function InteractionLayer() {
     };
 
     const handlePointerOver = (event) => {
-      const target = event.target.closest("a, button, .project-item, [data-cursor-label]");
-      const nextLabel = target?.dataset.cursorLabel || (target?.classList.contains("project-item") ? "VIEW" : "");
-      setCursorLabel(nextLabel);
-      setIsPointerMode(Boolean(target));
+      if (event.target.closest("[data-project-cursor]")) {
+        projectHoveredRef.current = true;
+        setIsProjectHovered(true);
+        pointerRef.current = { x: event.clientX, y: event.clientY };
+        if (frameRef.current === null) frameRef.current = requestAnimationFrame(render);
+      }
     };
 
     const handlePointerOut = (event) => {
-      if (!event.relatedTarget) {
-        setCursorLabel("");
-        setIsPointerMode(false);
+      const fromProject = event.target.closest("[data-project-cursor]");
+      const toProject = event.relatedTarget?.closest?.("[data-project-cursor]");
+      if (fromProject && !toProject) {
+        projectHoveredRef.current = false;
+        setIsProjectHovered(false);
       }
     };
 
@@ -88,9 +93,12 @@ function InteractionLayer() {
 
   return (
     <>
-      <div ref={cursorRef} className={`cursor-dot ${isPointerMode ? "cursor-dot-active" : ""}`} aria-hidden="true" />
-      <div ref={labelRef} className={`cursor-label ${cursorLabel ? "cursor-label-visible" : ""}`} aria-hidden="true">
-        {cursorLabel}
+      <div
+        ref={labelRef}
+        className={`cursor-label ${isProjectHovered ? "cursor-label-visible" : ""}`}
+        aria-hidden="true"
+      >
+        VIEW PROJECT ↗
       </div>
       <div ref={progressRef} className="scroll-progress" aria-hidden="true" />
     </>

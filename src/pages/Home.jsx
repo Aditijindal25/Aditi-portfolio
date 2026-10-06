@@ -1,176 +1,108 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Home() {
-  const [terminalOpen, setTerminalOpen] = useState(false);
+  const [localTime, setLocalTime] = useState(() => new Date());
+
+  useEffect(() => {
+    const updateLocalTime = () => setLocalTime(new Date());
+    const interval = window.setInterval(updateLocalTime, 30000);
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const localTimeLabel = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZoneName: "short",
+  }).format(localTime);
+
   return (
     <main className="home">
       <aside className="social-rail" aria-label="Social links">
-        <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/Aditijindal25" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
+        <a href="https://www.linkedin.com/in/aditijindal2506" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
         <a href="mailto:aditijindal441@gmail.com" aria-label="Email">@</a>
-        <span className="social-line"></span>
+        <span className="social-line" />
       </aside>
 
       <div className="home-content">
-        <p className="eyebrow intro-animate delay-1">HELLO, I'M</p>
-
-        <h1 className="intro-animate delay-2">
-          Aditi
-          <span>Jindal.</span>
-        </h1>
-
-        <h2 className="intro-animate delay-3">
-          BUILDING DIGITAL EXPERIENCES. <span>LEARNING THE SYSTEMS BEHIND THEM.</span>
-        </h2>
-
+        <p className="eyebrow intro-animate delay-1">SOFTWARE ENGINEERING INTERN CANDIDATE</p>
+        <h1 className="intro-animate delay-2">Aditi<span>Jindal.</span></h1>
+        <h2 className="intro-animate delay-3">Full-stack developer, CS&amp;IT '29.</h2>
         <p className="intro intro-animate delay-4">
-          Computer Science undergraduate building responsive web applications with React and JavaScript, strengthening problem-solving fundamentals, and exploring AI, full-stack development, cloud and security.
+          I'm a second-year B.Tech CS&amp;IT student at KIET Ghaziabad. I'm seeking a software engineering internship.
         </p>
 
         <div className="home-buttons intro-animate delay-5">
-          <Link to="/projects" className="primary-btn">EXPLORE MY WORK <span>→</span></Link>
-          <Link to="/contact" className="outline-btn">LET'S CONNECT <span>↗</span></Link>
+          <Link to="/projects" className="primary-btn">VIEW CASE STUDIES <span>→</span></Link>
+          <Link to="/contact" className="outline-btn">CONTACT ME <span>↗</span></Link>
         </div>
 
         <div className="home-tags intro-animate delay-6">
           <span>REACT</span>
-          <span>FULL STACK</span>
-          <span>AI / ML</span>
-          <span>DSA</span>
+          <span>NODE.JS</span>
+          <span>EXPRESS</span>
+          <span>POSTGRESQL</span>
         </div>
 
         <div className="code-detail intro-animate delay-6">
           <span className="code-detail-mark">&gt;</span>
-          <code>const build = <b>"something meaningful"</b>;</code>
+          <code>const stack = <b>"React · Node.js · Express · PostgreSQL"</b>;</code>
         </div>
 
-        <button className="terminal-trigger" onClick={() => setTerminalOpen(true)}>
-          &gt; OPEN_TERMINAL
+        <button
+          className="terminal-trigger"
+          title="Open the portfolio terminal"
+          onClick={() => window.dispatchEvent(new Event("portfolio:open-terminal"))}
+        >
+          &gt; OPEN_PROFILE
         </button>
       </div>
 
       <div className="glass-sculpture" aria-hidden="true">
-        <span className="glass-ribbon glass-ribbon-back"></span>
-        <span className="glass-ribbon glass-ribbon-front"></span>
-        <span className="glass-highlight"></span>
+        <span className="glass-ribbon glass-ribbon-back" />
+        <span className="glass-ribbon glass-ribbon-front" />
+        <span className="glass-highlight" />
       </div>
 
-      <section className="system-card intro-animate delay-6" aria-label="System status">
+      <section className="system-card intro-animate delay-6" aria-label="Current profile details">
         <div className="system-card-top">
           <div className="system-title">
-            <span className="pulse-dot"></span>
-            SYSTEM STATUS <b>— ONLINE</b>
+            <span className="pulse-dot" />
+            PROFILE <b>— OPEN</b>
           </div>
-          <span className="system-index">01 / 04</span>
+          <span className="system-index">KIET · CS&amp;IT</span>
         </div>
 
         <div className="system-row">
-          <span>LEARNING</span>
-          <strong>DSA &amp; ALGORITHMS</strong>
+          <span>PROJECT</span>
+          <strong>LEADFLOW CRM</strong>
         </div>
         <div className="system-row">
-          <span>BUILDING</span>
-          <strong>REACT / FULL STACK</strong>
+          <span>STACK</span>
+          <strong>REACT · NODE · EXPRESS · POSTGRESQL</strong>
         </div>
         <div className="system-row">
-          <span>EXPLORING</span>
-          <strong>CLOUD &amp; SECURITY</strong>
+          <span>INTERNSHIP</span>
+          <strong>SOFTWARE ENGINEERING</strong>
         </div>
         <div className="system-row">
-          <span>CURRENTLY</span>
-          <strong>RAKSHAK AI</strong>
+          <span>LOCATION</span>
+          <strong>KIET GHAZIABAD</strong>
         </div>
 
-        <div className="system-card-footer">
-          <span>STATUS</span>
-          <strong><i></i> ONLINE</strong>
-        </div>
       </section>
 
-      <span className="hero-coordinate coordinate-top">28.6139° N / 77.2090° E</span>
-      <span className="hero-coordinate coordinate-bottom">BUILD / 2025—29</span>
-      {terminalOpen && (
-  <div className="terminal-overlay">
-
-    <div className="terminal-window">
-
-      <div className="terminal-top">
-
-        <span>ADITI@PORTFOLIO:~</span>
-
-        <button
-          onClick={() => setTerminalOpen(false)}
-          className="terminal-close"
-        >
-          ×
-        </button>
-
-      </div>
-
-      <div className="terminal-body">
-
-        <p>
-          <span className="terminal-purple">&gt;</span>{" "}
-          aditi.init()
-        </p>
-
-        <p className="terminal-success">
-          ✓ portfolio loaded
-        </p>
-
-        <p className="terminal-success">
-          ✓ projects loaded
-        </p>
-
-        <p className="terminal-success">
-          ✓ skills loaded
-        </p>
-
-        <br />
-
-        <p>
-          <span className="terminal-purple">&gt;</span>{" "}
-          status
-        </p>
-
-        <p className="terminal-label">
-          AVAILABLE FOR:
-        </p>
-
-        <p>→ INTERNSHIPS</p>
-        <p>→ PROJECTS</p>
-        <p>→ COLLABORATIONS</p>
-
-        <br />
-
-        <p>
-          <span className="terminal-purple">&gt;</span>{" "}
-          location
-        </p>
-
-        <p>→ INDIA</p>
-
-        <br />
-
-        <p className="terminal-cursor-line">
-          <span className="terminal-purple">&gt;</span>{" "}
-          _
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-)}
+      <span className="hero-coordinate coordinate-top">{localTimeLabel}</span>
+      <span className="hero-coordinate coordinate-bottom">B.TECH / 2025–2029</span>
 
       <div className="home-meta intro-animate delay-6">
-        <span>CS / IT</span>
-        <span>ADITI JINDAL</span>
-        <span>2025 — 2029</span>
+        <span>B.TECH CS&amp;IT</span>
+        <span>KIET GHAZIABAD</span>
+        <span>2025–2029</span>
       </div>
-
     </main>
   );
 }

@@ -3,7 +3,7 @@ function Contact() {
     <main className="page">
 
       <div className="page-number">
-        07 / CONTACT
+        06 / CONTACT
       </div>
 
       <div className="contact-content">
@@ -21,22 +21,23 @@ function Contact() {
         </h1>
 
         <p className="contact-description">
-          I am open to software engineering internships, thoughtful collaborations and projects where I can contribute, learn quickly and ship useful work.
+          I'm seeking a software engineering internship. Email is the fastest way to reach me.
         </p>
 
         <a
           href="mailto:aditijindal441@gmail.com"
-          className="contact-email"
+          className="contact-email contact-action contact-action-primary"
         >
           aditijindal441@gmail.com →
         </a>
 
-        <div className="contact-links">
+        <div className="contact-links" aria-label="Professional profiles and resume">
 
           <a
             href="https://www.linkedin.com/in/aditijindal2506/"
             target="_blank"
             rel="noopener noreferrer"
+            className="contact-action"
           >
             LINKEDIN ↗
           </a>
@@ -45,20 +46,21 @@ function Contact() {
             href="https://github.com/Aditijindal25"
             target="_blank"
             rel="noopener noreferrer"
+            className="contact-action"
           >
             GITHUB ↗
+          </a>
+
+          <a className="contact-action" href="/ADITI-JINDAL.pdf" target="_blank" rel="noopener noreferrer">
+            RESUME ↗
           </a>
 
         </div>
 
         <div className="contact-cta">
 
-          <span>
-            OPEN TO
-          </span>
-
           <strong>
-            Internships · Projects · Collaborations
+            Available for a software engineering internship.
           </strong>
 
         </div>

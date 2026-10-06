@@ -1,116 +1,54 @@
 function Journey() {
   const journeyItems = [
     {
-      year: "2025 — 2029",
-      title: "B.TECH — CS & IT",
-      organization: "Krishna Institute of Engineering and Technology",
-      description:
-        "Computer Science and Information Technology · CGPA: 8.03 · Focused on software engineering, algorithms and applied systems.",
+      section: "01 / EDUCATION",
+      date: "2025–2029",
+      title: "B.TECH · COMPUTER SCIENCE AND INFORMATION TECHNOLOGY",
+      organization: "KIET Ghaziabad",
     },
-
     {
-      year: "26 AUG — 26 SEP 2026",
-      title: "FULL STACK WEB DEVELOPMENT INTERN",
+      section: "02 / EXPERIENCE",
+      title: "ONE-MONTH FULL-STACK WEB DEVELOPMENT INTERNSHIP",
       organization: "Future Interns",
-      description:
-        "One-month full-stack internship focused on shipping practical web projects, applying development workflows, and turning requirements into working software.",
     },
-
     {
-      year: "2026",
-      title: "SMART INDIA HACKATHON",
-      organization: "Hackathon",
-      description:
-        "Worked in a team-based problem-solving environment focused on translating a real-world challenge into a usable technical solution.",
-    },
-
-    {
-      year: "2026",
-      title: "ICAC CHAMPIONSHIP",
-      organization: "Competitive Programming",
-      description:
-        "Built competitive programming discipline through timed problem solving, algorithmic reasoning and implementation under constraints.",
-    },
-
-    {
-      year: "2026",
-      title: "GIRLSCRIPT SUMMER OF CODE",
-      organization: "Open Source",
-      description:
-        "Practiced collaborative development through open-source contribution, code review and working within an existing project context.",
-    },
-
-    {
-      year: "2026",
-      title: "PYTHON WEATHER APPLICATION",
-      organization: "Personal Project",
-      description:
-        "Built a Python weather application using API integration, Git and GitHub, with a focus on consuming external data reliably.",
-    },
-
-    {
-      year: "2026",
-      title: "SOCIAL INTERNSHIP",
-      organization: "Government School",
-      description:
-        "Led a social internship and delivered cybersecurity workshops for 60+ students using AI-supported tools and interactive learning content.",
+      section: "03 / COMMUNITY",
+      title: "SOCIAL INTERNSHIP · GOVERNMENT SCHOOL",
+      organization: "Cybersecurity workshops",
+      description: "Delivered workshops for 60+ students.",
     },
   ];
 
   return (
-    <main className="page">
-
-      <div className="page-number">
-        04 / JOURNEY
-      </div>
-
+    <main className="page journey-page">
+      <div className="page-number">04 / JOURNEY</div>
       <div className="journey-header">
-
-        <p className="eyebrow">
-          MY JOURNEY
-        </p>
-
+        <p className="eyebrow">EDUCATION AND ENGINEERING</p>
         <h1 className="page-title">
-          Evidence in
+          Learning through
           <br />
-          <span>progress.</span>
+          <span>the work.</span>
         </h1>
-
+        <p className="journey-intro">
+          Education, hands-on experience, and the work that has shaped how I build.
+        </p>
       </div>
-
-      <div className="journey-list">
-
-        {journeyItems.map((item, index) => (
-          <div
-            className="journey-item"
-            key={index}
-          >
-
-            <span className="journey-year">
-              {item.year}
-            </span>
-
-            <div>
-
-              <h2>
-                {item.title}
-              </h2>
-
-              <h3>
-                {item.organization}
-              </h3>
-
-              <p>
-                {item.description}
-              </p>
-
+      <ol className="journey-timeline" aria-label="Education, experience, and community">
+        {journeyItems.map((item) => (
+          <li className="journey-item" key={item.section}>
+            <div className="journey-meta">
+              {item.date && <span className="journey-year">{item.date}</span>}
+              <span className="journey-category">{item.section}</span>
             </div>
-
-          </div>
+            <span className="journey-marker" aria-hidden="true" />
+            <div className="journey-entry-content">
+              <h2 className="journey-entry-title">{item.title}</h2>
+              {item.organization && <p className="journey-organization">{item.organization}</p>}
+              {item.description && <p className="journey-description">{item.description}</p>}
+            </div>
+          </li>
         ))}
-
-      </div>
-
+      </ol>
     </main>
   );
 }
