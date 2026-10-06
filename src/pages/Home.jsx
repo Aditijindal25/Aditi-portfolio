@@ -29,8 +29,8 @@ function Home() {
 
       <div className="home-content">
         <p className="eyebrow intro-animate delay-1">SOFTWARE ENGINEERING INTERN CANDIDATE</p>
-        <h1 className="intro-animate delay-2">Aditi<span>Jindal.</span></h1>
-        <h2 className="intro-animate delay-3">Full-stack developer.</h2>
+        <h1 className="intro-animate delay-2">Aditi<span>Jindal</span></h1>
+        <h2 className="intro-animate delay-3">Full-stack developer</h2>
         <p className="intro intro-animate delay-4">
           I'm a second-year B.Tech CS&amp;IT student at KIET Ghaziabad. I'm seeking a software engineering internship.
         </p>
